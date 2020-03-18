@@ -1,10 +1,3 @@
-body {
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-}
 
 *,
 *::before,
@@ -14,6 +7,54 @@ body {
   box-sizing: inherit;
 }
 
+body {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: #fef7f2;
+  max-width: 1200px;
+}
+
+
 canvas {
-  background: black;
+  background-color: #fef7f2;
+  width: 588px;
+  height: 467px;
+}
+
+.circle {
+  width: 588px;
+  height: 467px;
+  border-top-left-radius: 180px;
+  border-bottom-left-radius: 180px;
+  display: flex;
+  background-color: #fef7f2;
+  overflow: hidden;
+}
+
+.left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 70px;
+  padding-right: 20px;
+  background-color: #fef7f2;
+  align-self: stretch;
+}
+
+h3 {
+  font-size: 35px;
+  color: rgb(66, 17, 66);
+}
+
+button {
+  padding: 5px 20px;
+  border-radius: 15px;
+  border: none;
+  background-color: brown;
+  color: white;
+  width: fit-content;
 }

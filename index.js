@@ -1,6 +1,6 @@
 let ctx = canvas.getContext("2d");
-let cw = (canvas.width = window.innerWidth);
-let ch = (canvas.height = window.innerHeight);
+let cw = canvas.width;
+let ch = canvas.height;
 let rid = null; // request animation id
 
 const LINE_COLOR = '#afdedd';
@@ -8,7 +8,7 @@ class Particle {
   constructor() {
     this.pos = { x: Math.random() * cw, y: Math.random() * ch };
     // this.vel = { x: 0, y: 0 };
-    this.vel = { x: Math.random(), y: Math.random() };
+    this.vel = { x: Math.random() + 1, y: Math.random() + 1 };
     // this.base = (1 + Math.random()) * -3;
     this.base = 1;
     this.life = randomIntFromInterval(25, 50);
@@ -84,7 +84,7 @@ let octaves = 2;
 let falloff = 0.5;
 noiseDetail(octaves, falloff);
 
-for (let i = 0; i < 1000; i++) {
+for (let i = 0; i < 700; i++) {
   particles.push(new Particle());
 }
 
@@ -120,8 +120,8 @@ function frame() {
 }
 
 function Init() {
-  cw = canvas.width = window.innerWidth;
-  ch = canvas.height = window.innerHeight;
+  cw = canvas.width;
+  ch = canvas.height;
 
   ctx.fillStyle = LINE_COLOR;
 
