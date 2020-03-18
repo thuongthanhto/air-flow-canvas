@@ -10,7 +10,7 @@ class Particle {
     // this.vel = { x: 0, y: 0 };
     this.vel = { x: Math.random() + 1, y: Math.random() + 1 };
     // this.base = (1 + Math.random()) * -3;
-    this.base = 1;
+    this.base = 0.3;
     this.life = randomIntFromInterval(25, 50);
     this.history = [];
   }
@@ -31,6 +31,7 @@ class Particle {
     }
 
     ctx.strokeStyle = LINE_COLOR;
+    ctx.lineWidth  = 1;
     ctx.stroke();
 
     if (this.history.length > this.life) {
@@ -81,7 +82,7 @@ let start = 0;
 
 let time = 0;
 let octaves = 2;
-let falloff = 0.5;
+let falloff = 3;
 noiseDetail(octaves, falloff);
 
 for (let i = 0; i < 700; i++) {
