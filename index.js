@@ -3,6 +3,7 @@ let cw = (canvas.width = window.innerWidth);
 let ch = (canvas.height = window.innerHeight);
 let rid = null; // request animation id
 
+const LINE_COLOR = '#afdedd';
 class Particle {
   constructor() {
     this.pos = { x: Math.random() * cw, y: Math.random() * ch };
@@ -27,7 +28,7 @@ class Particle {
       ctx.lineTo(this.history[i].x, this.history[i].y);
     }
 
-    ctx.strokeStyle = `hsl(10,70%,${this.life * 2}%)`;
+    ctx.strokeStyle = LINE_COLOR;
     ctx.stroke();
 
     if (this.history.length > this.life) {
@@ -120,7 +121,7 @@ function Init() {
   cw = canvas.width = window.innerWidth;
   ch = canvas.height = window.innerHeight;
 
-  ctx.fillStyle = "hsla(0, 5%, 5%, .025)";
+  ctx.fillStyle = LINE_COLOR;
 
   rows = ~~(ch / size) + 2;
   cols = ~~(cw / size) + 2;
