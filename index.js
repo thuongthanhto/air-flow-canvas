@@ -7,8 +7,10 @@ const LINE_COLOR = '#afdedd';
 class Particle {
   constructor() {
     this.pos = { x: Math.random() * cw, y: Math.random() * ch };
-    this.vel = { x: 0, y: 0 };
-    this.base = (1 + Math.random()) * -3;
+    // this.vel = { x: 0, y: 0 };
+    this.vel = { x: Math.random(), y: Math.random() };
+    // this.base = (1 + Math.random()) * -3;
+    this.base = 1;
     this.life = randomIntFromInterval(25, 50);
     this.history = [];
   }
@@ -126,8 +128,8 @@ function Init() {
   rows = ~~(ch / size) + 2;
   cols = ~~(cw / size) + 2;
 
-  //flowField = new Array(rows * cols);
-  //getFlowField(rows, cols);
+  // flowField = new Array(rows * cols);
+  // getFlowField(rows, cols);
 
   if (rid) {
     window.cancelAnimationFrame(rid);
